@@ -1,0 +1,9 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.auto.tfvars
+
+# Terraform lock file is OK to commit
+!.terraform.lock.hcl
