@@ -1,7 +1,5 @@
 resource "aws_s3_bucket" "this" {
-  bucket = var.bucket_name
-  tags = {
-    Name       = var.bucket_name
-    Environment = var.environment
-  }
+  for_each = var.buckets
+  bucket   = each.value.bucket_name
+  tags     = each.value.tags
 }
