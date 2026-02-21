@@ -40,8 +40,7 @@ resource "aws_route_table" "private_database" {
 }
 
 resource "aws_route_table_association" "private_database" {
-    for_each = aws_subnet.private_database
-    subnet_id = each.value.id
-    route_table_id = aws_route_table.private_app[each.key].id
-  
+  for_each       = aws_subnet.private_database
+  subnet_id      = each.value.id
+  route_table_id = aws_route_table.private_database.id
 }

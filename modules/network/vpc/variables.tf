@@ -28,5 +28,11 @@ variable "private_database_subnets" {
 }
 
 variable "tags" {
-  type = map(string)
+  type    = map(string)
+  default = {}
+}
+
+variable "additional_private_subnet_tags" {
+  type    = map(string)
+  default = {}
 }
